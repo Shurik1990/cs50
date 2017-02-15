@@ -6,7 +6,7 @@
  *
  * Global CSS.
  */
-body {
+.background {
     background-image: url(../img/background.jpg);
     background-repeat: repeat;
     height: 100%;
