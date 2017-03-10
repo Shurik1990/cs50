@@ -1,0 +1,49 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div, a {
+    padding: 5px;
+}
+
+div {
+    color: red;
+}
+
+#green_block {
+    color: green;
+}
+
+.black_text {
+    color: black;
+}
+
+#black_bold_text {
+    color: black;
+    font-weight: bold;
+}
+
+img {
+    cursor: pointer;
+}
+
+img:hover {
+    animation: shadow  1s inherit ease-in-out;
+    border-radius: 150%;
+}
+
+.button {
+    background-color: rgba(116, 214, 0, 0.80);
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 10px;
+    color: black;
+}

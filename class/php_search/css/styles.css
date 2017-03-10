@@ -1,0 +1,99 @@
+#results b
+{
+	color: #d20000;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#search_form {
+    width: 300px;
+    height: 80px;
+    background-color: rgba(5, 0, 0, 0.1);
+    line-height: 80px;
+    border: 5px solid rgba(108, 197, 0, 0.7);
+    border-radius: 10px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 10px 0 10px 0;
+}
+
+#search_form input[name="s"] {
+    background-color: rgba(5, 197, 0, 0.7);
+    color: rgba(5, 0, 0, 0.7);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search_form input[name="q"]
+{
+	width: 200px;
+	padding: 5px 5px 5px 10px;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+#regist_form {
+    background-color: rgba(5, 0, 0, 0.1);
+    border: 5px solid rgba(108, 197, 0, 0.7);
+    border-radius: 10px;
+    vertical-align: middle;
+    margin: 10px 0 10px 0;
+    padding: 5px;
+}
+
+#registr_form input {
+    margin: 5px;
+}
+
+#regist_form > div
+{
+	width: 300px;
+	margin-top: 10px;
+}
+#regist_form .descr
+{
+	display: inline-block;
+	width: 100px;
+}
+#regist_form input[type="text"] , 
+#regist_form input[type="password"]
+{
+	display: inline-block;
+	width: 180px;
+}
+form .required
+{
+	color: red;
+}
+#regist_form input[type="submit"]
+{
+	margin: 20px 0 10px 0;
+	width: 100px;
+	height: 25px;
+    background-color: rgba(5, 197, 0, 0.7);
+    color: rgba(5, 0, 0, 0.7);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form .error
+{
+	font-size: 10px;
+	color: red;
+	display: inline-block;
+	width: 100%;
+	text-align: right;
+}

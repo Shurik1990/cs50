@@ -1,0 +1,24 @@
+#game_body
+{
+	width: 300px;
+	margin: 0 auto;
+}
+#game_body .row{
+	width: 300px;
+}
+#game_body .cell{
+	display:inline-block;
+	width: 80px;
+	height: 80px;
+	margin: 8px;
+}
+#game_body .cell.free{
+	background-color: #aaffaa;
+}
+#game_body .cell.user1{
+	background-color: #ffaaaa;
+}
+#game_body .cell.user2{
+	background-color: #aaaaff;
+}
+
