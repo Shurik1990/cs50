@@ -1,0 +1,207 @@
+.keksta {
+  min-width: 550px;
+  background: url("../img/background.png") repeat;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -375px;
+  margin-left: -650px; }
+  .keksta .container {
+    overflow: hidden;
+    width: 1300px;
+    height: 750px;
+    display: flex;
+    flex-flow: row wrap; }
+    .keksta .container .left {
+      width: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .keksta .container .left .photos {
+        position: relative;
+        margin: 50px 0 10px 70px;
+        width: 600px;
+        height: 600px;
+        border: 10px solid #ffffff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+        .keksta .container .left .photos .photo {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          z-index: 10;
+          background-image: url("../img/toggle-pic.jpg"); }
+      .keksta .container .left .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+        height: 80px;
+        padding-left: 40px; }
+        .keksta .container .left .form-group .btn-default {
+          color: #aaa9a9;
+          font-weight: bolder;
+          background-color: rgba(255, 255, 255, 0.17);
+          border: 2px solid rgba(252, 252, 252, 0.4);
+          border-radius: 8px;
+          margin-top: -5px;
+          transition: background-color 1s 0.1s ease;
+          transition: color 0.4s 0.1s ease; }
+        .keksta .container .left .form-group .btn:hover {
+          color: #f4f0f0;
+          background-color: rgba(137, 84, 60, 0.78); }
+        .keksta .container .left .form-group .btn-start {
+          margin-right: 120px; }
+    .keksta .container .middle {
+      display: flex;
+      flex-direction: column;
+      width: 250px;
+      bottom: 10px;
+      position: relative;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      right: 0; }
+      .keksta .container .middle #share {
+        width: 85%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        .keksta .container .middle #share .like {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 50px;
+          color: #aaa9a9; }
+        .keksta .container .middle #share .push {
+          display: inline-block;
+          width: 17%;
+          min-width: 100px;
+          line-height: 40px;
+          margin: 5px 2px 20px 2px;
+          font-size: 15px;
+          text-align: center;
+          color: #fff;
+          cursor: pointer; }
+        .keksta .container .middle #share .social a:hover {
+          text-decoration: none; }
+        .keksta .container .middle #share .facebook {
+          background-color: #3b5998; }
+        .keksta .container .middle #share .facebook:hover {
+          background-color: #2d4373;
+          color: #fff; }
+        .keksta .container .middle #share .google {
+          background-color: #dd4b39; }
+        .keksta .container .middle #share .google:hover {
+          background-color: #c23321;
+          color: #fff; }
+        .keksta .container .middle #share .twitter {
+          background-color: #55acee; }
+        .keksta .container .middle #share .twitter:hover {
+          background-color: #2795e9;
+          color: #fff; }
+        .keksta .container .middle #share .vkontakte {
+          background-color: #587ea3; }
+        .keksta .container .middle #share .vkontakte:hover {
+          background-color: #466482;
+          color: #fff; }
+      .keksta .container .middle .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+        padding: 10px 0 10px 0;
+        margin: 20px 0 10px 0; }
+        .keksta .container .middle .form-group .btn-default {
+          color: #aaa9a9;
+          font-weight: bolder;
+          background-color: rgba(255, 255, 255, 0.17);
+          border: 2px solid rgba(252, 252, 252, 0.4);
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          transition: background-color 1s 0.1s ease;
+          transition: color 0.4s 0.1s ease; }
+        .keksta .container .middle .form-group .btn:hover {
+          color: #f4f0f0;
+          background-color: rgba(137, 84, 60, 0.78); }
+    .keksta .container .right {
+      display: flex;
+      flex-direction: row;
+      width: 300px;
+      bottom: 0;
+      position: absolute;
+      height: 100%;
+      justify-content: center;
+      right: 0; }
+      .keksta .container .right .toggle-controls {
+        box-sizing: border-box;
+        margin-bottom: 0;
+        padding: 20px 0 20px 20px;
+        background: rgba(100, 100, 100, 0.42);
+        text-align: center; }
+        .keksta .container .right .toggle-controls .active {
+          box-shadow: 0 0 0 3px #ffffff; }
+        .keksta .container .right .toggle-controls li {
+          position: relative;
+          display: inline-block;
+          box-sizing: border-box;
+          margin-right: 28px;
+          padding: 60px 0 0;
+          width: 90px;
+          height: 90px;
+          background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic.jpg");
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic.jpg");
+          background-position: 40%;
+          background-size: cover;
+          color: #ffffff;
+          vertical-align: top;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-family: Arial;
+          cursor: pointer;
+          margin-bottom: 30px;
+          transition: transform 0.1s 0.1s ease; }
+        .keksta .container .right .toggle-controls li:hover {
+          transform: scale(1.15); }
+    .keksta .container .natur {
+      filter: contrast(0.9) brightness(1.2) hue-rotate(-20deg) saturate(1.7) sepia(0.4);
+      -webkit-filter: contrast(0.9) brightness(1.2) hue-rotate(-20deg) saturate(1.7) sepia(0.4); }
+    .keksta .container .blur {
+      filter: saturate(2.5) hue-rotate(-30deg) contrast(0.67) sepia(0.4);
+      -webkit-filter: saturate(2.5) hue-rotate(-30deg) contrast(0.67) sepia(0.4); }
+    .keksta .container .contrast {
+      filter: contrast(1.1) brightness(1.3) saturate(2.4) sepia(0.4);
+      -webkit-filter: contrast(1.1) brightness(1.3) saturate(2.4) sepia(0.4); }
+    .keksta .container .negativ {
+      filter: contrast(2) saturate(5) hue-rotate(-180deg);
+      -webkit-filter: contrast(2) saturate(5) hue-rotate(-180deg); }
+    .keksta .container .mono {
+      filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
+      -webkit-filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02); }
+    .keksta .container .sepia {
+      filter: sepia(1);
+      -webkit-filter: sepia(1); }
+    .keksta .container .invert {
+      filter: invert(1);
+      -webkit-filter: invert(1); }
+    .keksta .container .magic {
+      filter: hue-rotate(180deg);
+      -webkit-filter: hue-rotate(180deg); }
+    .keksta .container .color {
+      filter: saturate(5);
+      -webkit-filter: saturate(5); }
+    .keksta .container .juicy {
+      filter: contrast(5);
+      -webkit-filter: contrast(5); }
+    .keksta .container .ghost {
+      filter: opacity(50%);
+      -webkit-filter: opacity(50%); }
+    .keksta .container .art {
+      filter: brightness(1.5) hue-rotate(-90deg);
+      -webkit-filter: brightness(1.5) hue-rotate(-90deg); }
+
+/*# sourceMappingURL=filter.css.map */

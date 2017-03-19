@@ -1,0 +1,130 @@
+.background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -340px;
+  margin-left: -400px;
+  background: url(../img/background.png) repeat; }
+  .background .container {
+    overflow: hidden;
+    width: 800px;
+    height: 680px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 15px 15px rgba(252, 252, 252, 0.8);
+    -moz-box-shadow: 0px 0px 15px 15px rgba(252, 252, 252, 0.8);
+    box-shadow: 0px 0px 15px 15px rgba(252, 252, 252, 0.8); }
+    .background .container .strap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+      top: -6%;
+      z-index: 1; }
+    .background .container .strap a {
+      width: 65px;
+      height: 145px;
+      transition: transform 0.2s 0.1s ease; }
+    .background .container .strap a:hover {
+      transform: translateY(7%); }
+    .background .container .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      top: -20%; }
+    .background .container .try_now {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: -110px 0 10px 0; }
+    .background .container form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .background .container form fieldset {
+        border: 2px solid rgba(252, 252, 252, 0.4);
+        border-radius: 20px;
+        width: 30%; }
+        .background .container form fieldset .form-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 85%;
+          margin: 0 auto;
+          padding: 10px 0 10px 0; }
+        .background .container form fieldset .form-control {
+          background-color: rgba(252, 252, 252, 0.19);
+          font-weight: bolder;
+          text-align: center;
+          border: 2px solid rgba(252, 252, 252, 0.4);
+          border-radius: 8px; }
+        .background .container form fieldset .help-block {
+          margin-bottom: -5px;
+          text-align: center;
+          font-size: 12px; }
+        .background .container form fieldset input[type="password"] {
+          margin-top: -5px; }
+        .background .container form fieldset .btn-default {
+          color: #aaa9a9;
+          font-weight: bolder;
+          background-color: rgba(255, 255, 255, 0.17);
+          border: 2px solid rgba(252, 252, 252, 0.4);
+          border-radius: 8px;
+          margin-top: -5px;
+          transition: background-color 1s 0.1s ease;
+          transition: color 0.4s 0.1s ease; }
+        .background .container form fieldset .btn:hover {
+          color: #f4f0f0;
+          background-color: rgba(137, 84, 60, 0.78); }
+    .background .container .register {
+      text-align: center;
+      margin: 10px 0 20px 0;
+      color: rgba(252, 252, 252, 0.73); }
+    .background .container .pics {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto; }
+      .background .container .pics .pic {
+        border: 6px solid #fff;
+        transition: transform 0.2s 0.1s ease; }
+      .background .container .pics .pic_1 {
+        background: url(../img/photo_1.jpg) no-repeat;
+        width: 119px;
+        height: 119px;
+        transform: rotate(-10deg);
+        position: relative;
+        left: 7%; }
+      .background .container .pics .pic_2 {
+        background: url(../img/photo_2.jpg) no-repeat;
+        width: 137px;
+        height: 150px;
+        transform: rotate(5deg);
+        position: relative;
+        left: 2%; }
+      .background .container .pics .pic_3 {
+        background: url(../img/photo_3.jpg) no-repeat;
+        width: 114px;
+        height: 103px;
+        transform: rotate(-5deg);
+        position: relative;
+        right: 1%; }
+      .background .container .pics .pic_4 {
+        background: url(../img/photo_4.jpg) no-repeat;
+        width: 133px;
+        height: 170px;
+        position: relative;
+        right: 3%; }
+      .background .container .pics .pic_5 {
+        background: url(../img/photo_5.jpg) no-repeat;
+        width: 135px;
+        height: 144px;
+        position: relative;
+        right: 5%;
+        transform: rotate(-8deg); }
+    .background .container .pic:hover {
+      cursor: pointer;
+      transform: scale(1.1); }
+
+/*# sourceMappingURL=styles.css.map */
