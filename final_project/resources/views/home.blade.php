@@ -14,16 +14,20 @@
                 <div class="photos">
                     <div class="photo"></div>
                 </div>
-                <div class="form-group">
-                    <button class="btn btn-default btn-start" type="submit">
-                        <span aria-hidden="true" class="glyphicon glyphicon-picture"></span>
+				<form method="post" action="{{ route('upload_file') }}" enctype="multipart/form-data">
+					<div class="form-group">
+						<input name="_token" type="hidden" value="{{ csrf_token() }}">
+						<input class="btn btn-default upload-form" type="file" id="file" multiple name="file[]">
+						<label class="btn btn-default" for="file">
+							<span aria-hidden="true" class="glyphicon glyphicon-check"></span>
+								Select photo...
+						</label>
+						<button class="btn btn-default btn-start" type="submit">
+							<span aria-hidden="true" class="glyphicon glyphicon-picture"></span>
                                 Upload your photo
-                    </button>
-                    <button class="btn btn-default btn-end" type="submit">
-                        <span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
-                                Download
-                    </button>
-                </div>
+						</button>
+					</div>
+				</form>
             </div>
             <div class="middle">
                 <div id="share">
@@ -46,6 +50,12 @@
 						</div>
 					</fieldset>
 				</form>
+				<div class="form-group-down">
+                <button class="btn btn-default-down" type="submit">
+                    <span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
+                        Download
+                </button>
+                </div>
             </div>
             <div class="right">
                 <ul class="toggle-controls">

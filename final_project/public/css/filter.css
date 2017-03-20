@@ -36,10 +36,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         height: 80px;
         padding-left: 40px; }
+        .keksta .container .left .form-group #file {
+          display: none; }
         .keksta .container .left .form-group .btn-default {
           color: #aaa9a9;
           font-weight: bolder;
@@ -53,7 +55,7 @@
           color: #f4f0f0;
           background-color: rgba(137, 84, 60, 0.78); }
         .keksta .container .left .form-group .btn-start {
-          margin-right: 120px; }
+          margin-left: 50px; }
     .keksta .container .middle {
       display: flex;
       flex-direction: column;
@@ -111,7 +113,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 85%;
+        width: 100%;
         padding: 10px 0 10px 0;
         margin: 20px 0 10px 0; }
         .keksta .container .middle .form-group .btn-default {
@@ -125,6 +127,28 @@
           transition: background-color 1s 0.1s ease;
           transition: color 0.4s 0.1s ease; }
         .keksta .container .middle .form-group .btn:hover {
+          color: #f4f0f0;
+          background-color: rgba(137, 84, 60, 0.78); }
+      .keksta .container .middle .form-group-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        width: 80%;
+        margin: 0 auto;
+        height: 80px;
+        position: relative;
+        bottom: -19.7%; }
+        .keksta .container .middle .form-group-down .btn-default-down {
+          color: #aaa9a9;
+          font-weight: bolder;
+          background-color: rgba(255, 255, 255, 0.17);
+          border: 2px solid rgba(252, 252, 252, 0.4);
+          border-radius: 8px;
+          margin-top: -5px;
+          transition: background-color 1s 0.1s ease;
+          transition: color 0.4s 0.1s ease; }
+        .keksta .container .middle .form-group-down .btn:hover {
           color: #f4f0f0;
           background-color: rgba(137, 84, 60, 0.78); }
     .keksta .container .right {
