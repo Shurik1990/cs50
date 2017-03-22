@@ -12,12 +12,13 @@
         <div class="container">
             <div class="left">
                 <div class="photos">
-                    <div class="photo"></div>
+                    <div class="photo" id="Div_contain_image"></div>
                 </div>
 				<form method="post" action="{{ route('upload_file') }}" enctype="multipart/form-data">
 					<div class="form-group">
 						<input name="_token" type="hidden" value="{{ csrf_token() }}">
 						<input class="btn btn-default upload-form" type="file" id="file" multiple name="file[]">
+						
 						<label class="btn btn-default" for="file">
 							<span aria-hidden="true" class="glyphicon glyphicon-check"></span>
 								Select photo...
@@ -52,8 +53,9 @@
 				</form>
 				<div class="form-group-down">
                 <button class="btn btn-default-down" type="submit">
-                    <span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
-                        Download
+                    <a href="" onclick="prepHref(this)" download>
+					<span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
+                        Download</a>
                 </button>
                 </div>
             </div>
@@ -74,7 +76,16 @@
                 </ul>
             </div>
         </div>
+		<script type="text/javascript">
+			function prepHref(linkElement) {
+				var myDiv = document.getElementById('Div_contain_image');
+				var myImage = myDiv.children[0];
+				linkElement.href = myImage.src;
+			}
+		</script>
+		<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+		<script src="js/view.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/share.js"></script>
+        <script type="text/javascript" src="js/share.js"></script>  
     </body>
 </html>

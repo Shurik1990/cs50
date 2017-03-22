@@ -13,7 +13,13 @@ class CreatePhotoTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('photo', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('tpl_name');
+			$table->string('user_name');
+			$table->string('updated_at');
+            $table->string('created_at');
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class CreatePhotoTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('photo');
     }
 }
