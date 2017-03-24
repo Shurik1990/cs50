@@ -11,29 +11,25 @@
     <body class="keksta">
         <div class="container">
             <div class="left">
-                <div class="photos">
-                    <div class="photo" id="Div_contain_image"></div>
+                <div id="photo-box" class="photo-box">
+                    <div class="label">
+                        <img src="img/upload.png" alt="Upload icon" width="100" height="100"/>
+                        <div>Select photo...</div>
+                    </div>
+                    <div id="loader" class="loader"></div>
                 </div>
-				<form method="post" action="{{ route('upload_file') }}" enctype="multipart/form-data">
-					<div class="form-group">
-						<input name="_token" type="hidden" value="{{ csrf_token() }}">
-						<input class="btn btn-default upload-form" type="file" id="file" multiple name="file[]">
-						
-						<label class="btn btn-default" for="file">
-							<span aria-hidden="true" class="glyphicon glyphicon-check"></span>
-								Select photo...
-						</label>
-						<button class="btn btn-default btn-start" type="submit">
-							<span aria-hidden="true" class="glyphicon glyphicon-picture"></span>
-                                Upload your photo
-						</button>
-					</div>
-				</form>
+                <div class="form-group">
+                    <div class="download">
+                        <a href="#" id="download-link" class="download-link"><span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
+                            Download</a>
+                    </div>
+                </div>
+                <input type="file" id="file-picker" class="file-picker"/>
             </div>
             <div class="middle">
                 <div id="share">
                 <div class="like">Share</div>
-                <div class="social">
+                <div class="social" data-url="" data-title={{ config('app.name', 'Photofilters') }}>
                     <a class="push facebook" data-id="fb"><i class="fa fa-facebook"></i> Facebook</a>
                     <a class="push twitter" data-id="tw"><i class="fa fa-twitter"></i> Twitter</a>
                     <a class="push vkontakte" data-id="vk"><i class="fa fa-vk"></i> VK</a>
@@ -51,41 +47,69 @@
 						</div>
 					</fieldset>
 				</form>
-				<div class="form-group-down">
-                <button class="btn btn-default-down" type="submit">
-                    <a href="" onclick="prepHref(this)" download>
-					<span aria-hidden="true" class="glyphicon glyphicon-download-alt"></span>
-                        Download</a>
-                </button>
-                </div>
             </div>
             <div class="right">
-                <ul class="toggle-controls">
-                    <li class="natur" data-filter="natur"></li>
-                    <li class="blur" data-filter="blur"></li>
-                    <li class="contrast" data-filter="contrast"></li>
-                    <li class="negativ" data-filter="negativ"></li>
-                    <li class="mono" data-filter="mono"></li>
-                    <li class="sepia" data-filter="sepia"></li>
-                    <li class="invert" data-filter="invert"></li>
-                    <li class="magic" data-filter="magic"></li>
-                    <li class="color" data-filter="color"></li>
-                    <li class="juicy" data-filter="juicy"></li>
-                    <li class="ghost" data-filter="ghost"></li>
-                    <li class="art" data-filter="art"></li>
-                </ul>
+                <div id="filters" class="filters">
+                    <div class="preset preset_original" data-preset="original">
+                        <span class="preset-name">Natur</span>
+                    </div>
+                    <div class="preset preset_vintage" data-preset="vintage">
+                        <span class="preset-name">Vintage</span>
+                    </div>
+                    <div class="preset preset_lomo" data-preset="lomo" class="">
+                        <span class="preset-name">Blur</span>
+                    </div>
+                    <div class="preset preset_clarity" data-preset="clarity" class="">
+                        <span class="preset-name">Clarity</span>
+                    </div>
+                    <div class="preset preset_concentrate" data-preset="concentrate">
+                        <span class="preset-name">Concentrate</span>
+                    </div>
+                    <div class="preset preset_sunrise" data-preset="sunrise">
+                        <span class="preset-name">Sunrise</span>
+                    </div>
+                    <div class="preset preset_crossProcess" data-preset="crossProcess">
+                        <span class="preset-name">Contrast</span>
+                    </div>
+                    <div class="preset preset_orangePeel" data-preset="orangePeel">
+                        <span class="preset-name">Sepia</span>
+                    </div>
+                    <div class="preset preset_love" data-preset="love" class="Active">
+                        <span class="preset-name">Love</span>
+                    </div>
+                    <div class="preset preset_grungy" data-preset="grungy">
+                        <span class="preset-name">Grungy</span>
+                    </div>
+                    <div class="preset preset_jarques" data-preset="jarques">
+                        <span class="preset-name">Jarques</span>
+                    </div>
+                    <div class="preset preset_pinhole" data-preset="pinhole">
+                        <span class="preset-name">Mono</span>
+                    </div>
+                    <div class="preset preset_oldBoot" data-preset="oldBoot">
+                        <span class="preset-name">Old Boot</span>
+                    </div>
+                    <div class="preset preset_glowingSun" data-preset="glowingSun">
+                        <span class="preset-name">Glowing Sun</span>
+                    </div>
+                    <div class="preset preset_hazyDays" data-preset="hazyDays">
+                        <span class="preset-name">Hazy Days</span>
+                    </div>
+                    <div class="preset preset_herMajesty" data-preset="herMajesty">
+                        <span class="preset-name">Her Majesty</span>
+                    </div>
+                    <div class="preset preset_nostalgia" data-preset="nostalgia">
+                        <span class="preset-name">Nostalgia</span>
+                    </div>
+                    <div class="preset preset_hemingway" data-preset="hemingway">
+                        <span class="preset-name">Hemingway</span>
+                    </div>
+                </div>
             </div>
         </div>
-		<script type="text/javascript">
-			function prepHref(linkElement) {
-				var myDiv = document.getElementById('Div_contain_image');
-				var myImage = myDiv.children[0];
-				linkElement.href = myImage.src;
-			}
-		</script>
 		<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
-		<script src="js/view.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/caman.full.min.js"></script>
+        <script type="text/javascript" src="js/filter.js"></script>
         <script type="text/javascript" src="js/share.js"></script>  
     </body>
 </html>

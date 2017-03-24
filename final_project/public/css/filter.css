@@ -5,46 +5,78 @@
   top: 50%;
   left: 50%;
   margin-top: -375px;
-  margin-left: -650px; }
+  margin-left: -650px;
+  color: #fff; }
   .keksta .container {
     overflow: hidden;
-    width: 1300px;
+    width: 1350px;
     height: 750px;
     display: flex;
     flex-flow: row wrap; }
     .keksta .container .left {
-      width: 700px;
+      width: 650px;
       display: flex;
       flex-direction: column;
       justify-content: center; }
-      .keksta .container .left .photos {
+      .keksta .container .left .photo-box {
         position: relative;
-        margin: 50px 0 10px 70px;
         width: 600px;
         height: 600px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 10px solid #ffffff;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
-        .keksta .container .left .photos .photo {
+        cursor: pointer; }
+        .keksta .container .left .photo-box .photo {
+          display: block;
+          transform: scale(1);
+          transition: transform .3s, width .3s, height .3s; }
+          .keksta .container .left .photo-box .photo.dragenter {
+            transform: scale(0.95); }
+        .keksta .container .left .photo-box .loader {
           position: absolute;
           width: 100%;
           height: 100%;
-          background-size: cover;
+          left: 0;
+          top: 0;
+          background: rgba(0, 0, 0, 0.6);
+          display: none;
           z-index: 10; }
-          .keksta .container .left .photos .photo img {
-            max-width: 100%;
-            height: auto; }
-      .keksta .container .left .form-group {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 0 auto;
-        height: 80px;
-        padding-left: 40px; }
-        .keksta .container .left .form-group #file {
-          display: none; }
-        .keksta .container .left .form-group .btn-default {
+          .keksta .container .left .photo-box .loader:before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            width: 100%;
+            content: 'Processing...';
+            color: white;
+            display: block; }
+        .keksta .container .left .photo-box .label {
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 40%;
+          text-align: center;
+          pointer-events: none;
+          user-select: none;
+          font-size: 14px; }
+          .keksta .container .left .photo-box .label img {
+            display: inline-block; }
+      .keksta .container .left .download {
+        text-align: center;
+        padding-top: 40px;
+        width: 150px;
+        margin: 0 auto; }
+        .keksta .container .left .download .download-link {
+          opacity: 0;
+          visibility: hidden;
+          display: inline-block;
+          text-decoration: none;
+          padding: 0 10px;
+          height: 40px;
+          line-height: 40px;
+          transition: opacity .4s;
           color: #aaa9a9;
           font-weight: bolder;
           background-color: rgba(255, 255, 255, 0.17);
@@ -53,11 +85,14 @@
           margin-top: -5px;
           transition: background-color 1s 0.1s ease;
           transition: color 0.4s 0.1s ease; }
-        .keksta .container .left .form-group .btn:hover {
+          .keksta .container .left .download .download-link.show {
+            opacity: 1;
+            visibility: visible; }
+        .keksta .container .left .download :hover {
           color: #f4f0f0;
           background-color: rgba(137, 84, 60, 0.78); }
-        .keksta .container .left .form-group .btn-start {
-          margin-left: 50px; }
+      .keksta .container .left .file-picker {
+        display: none; }
     .keksta .container .middle {
       display: flex;
       flex-direction: column;
@@ -131,110 +166,137 @@
         .keksta .container .middle .form-group .btn:hover {
           color: #f4f0f0;
           background-color: rgba(137, 84, 60, 0.78); }
-      .keksta .container .middle .form-group-down {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        width: 80%;
-        margin: 0 auto;
-        height: 80px;
-        position: relative;
-        bottom: -19.7%; }
-        .keksta .container .middle .form-group-down .btn-default-down {
-          color: #aaa9a9;
-          font-weight: bolder;
-          background-color: rgba(255, 255, 255, 0.17);
-          border: 2px solid rgba(252, 252, 252, 0.4);
-          border-radius: 8px;
-          margin-top: -5px;
-          transition: background-color 1s 0.1s ease;
-          transition: color 0.4s 0.1s ease; }
-          .keksta .container .middle .form-group-down .btn-default-down a {
-            color: #aaa9a9;
-            transition: background-color 1s 0.1s ease;
-            transition: color 0.4s 0.1s ease;
-            text-decoration: none; }
-          .keksta .container .middle .form-group-down .btn-default-down a:hover {
-            color: #f4f0f0; }
-        .keksta .container .middle .form-group-down .btn:hover {
-          color: #f4f0f0;
-          background-color: rgba(137, 84, 60, 0.78); }
     .keksta .container .right {
       display: flex;
       flex-direction: row;
-      width: 300px;
+      width: 410px;
       bottom: 0;
       position: absolute;
       height: 100%;
       justify-content: center;
       right: 0; }
-      .keksta .container .right .toggle-controls {
+      .keksta .container .right .filters {
         box-sizing: border-box;
         margin-bottom: 0;
-        padding: 20px 0 20px 20px;
+        padding: 10px 0 20px 20px;
         background: rgba(100, 100, 100, 0.42);
         text-align: center; }
-        .keksta .container .right .toggle-controls .active {
-          box-shadow: 0 0 0 3px #ffffff; }
-        .keksta .container .right .toggle-controls li {
+        .keksta .container .right .filters.active {
+          opacity: 1;
+          visibility: visible; }
+        .keksta .container .right .filters::-webkit-scrollbar {
+          height: 4px;
+          background-color: rgba(100, 100, 100, 0.2);
+          border-radius: 2px; }
+        .keksta .container .right .filters::-webkit-scrollbar-thumb {
+          border-radius: 1px;
+          background: #fff;
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+          cursor: pointer; }
+        .keksta .container .right .filters::-webkit-scrollbar-thumb:window-inactive {
+          background: #aaa; }
+        .keksta .container .right .filters .preset {
           position: relative;
           display: inline-block;
           box-sizing: border-box;
-          margin-right: 28px;
-          padding: 60px 0 0;
-          width: 90px;
-          height: 90px;
-          background-image: -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic.jpg");
-          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic.jpg");
+          margin-right: 22px;
+          width: 100px;
+          height: 100px;
           background-position: 40%;
           background-size: cover;
-          color: #ffffff;
+          color: #fff;
           vertical-align: top;
           text-align: center;
           text-transform: uppercase;
-          font-size: 14px;
+          font-size: 12px;
           font-family: Arial;
           cursor: pointer;
-          margin-bottom: 30px;
+          margin-bottom: 25px;
           transition: transform 0.1s 0.1s ease; }
-        .keksta .container .right .toggle-controls li:hover {
+          .keksta .container .right .filters .preset.active {
+            box-shadow: 0 0 0 3px #ffffff; }
+        .keksta .container .right .filters .preset:hover {
           transform: scale(1.15); }
-    .keksta .container .natur {
-      filter: contrast(0.9) brightness(1.2) hue-rotate(-20deg) saturate(1.7) sepia(0.4);
-      -webkit-filter: contrast(0.9) brightness(1.2) hue-rotate(-20deg) saturate(1.7) sepia(0.4); }
-    .keksta .container .blur {
-      filter: saturate(2.5) hue-rotate(-30deg) contrast(0.67) sepia(0.4);
-      -webkit-filter: saturate(2.5) hue-rotate(-30deg) contrast(0.67) sepia(0.4); }
-    .keksta .container .contrast {
-      filter: contrast(1.1) brightness(1.3) saturate(2.4) sepia(0.4);
-      -webkit-filter: contrast(1.1) brightness(1.3) saturate(2.4) sepia(0.4); }
-    .keksta .container .negativ {
-      filter: contrast(2) saturate(5) hue-rotate(-180deg);
-      -webkit-filter: contrast(2) saturate(5) hue-rotate(-180deg); }
-    .keksta .container .mono {
-      filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02);
-      -webkit-filter: saturate(0.02) contrast(0.85) brightness(1.2) sepia(0.02); }
-    .keksta .container .sepia {
-      filter: sepia(1);
-      -webkit-filter: sepia(1); }
-    .keksta .container .invert {
-      filter: invert(1);
-      -webkit-filter: invert(1); }
-    .keksta .container .magic {
-      filter: hue-rotate(180deg);
-      -webkit-filter: hue-rotate(180deg); }
-    .keksta .container .color {
-      filter: saturate(5);
-      -webkit-filter: saturate(5); }
-    .keksta .container .juicy {
-      filter: contrast(5);
-      -webkit-filter: contrast(5); }
-    .keksta .container .ghost {
-      filter: opacity(50%);
-      -webkit-filter: opacity(50%); }
-    .keksta .container .art {
-      filter: brightness(1.5) hue-rotate(-90deg);
-      -webkit-filter: brightness(1.5) hue-rotate(-90deg); }
+        .keksta .container .right .filters .preset_original {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic.jpg"); }
+        .keksta .container .right .filters .preset_vintage {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-vintage.png"); }
+        .keksta .container .right .filters .preset_lomo {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-lomo.png"); }
+        .keksta .container .right .filters .preset_clarity {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-clarity.png"); }
+        .keksta .container .right .filters .preset_concentrate {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-concentrate.png"); }
+        .keksta .container .right .filters .preset_sunrise {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-sunrise.png"); }
+        .keksta .container .right .filters .preset_crossProcess {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-crossProcess.png"); }
+        .keksta .container .right .filters .preset_orangePeel {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-orangePeel.png"); }
+        .keksta .container .right .filters .preset_love {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-love.png"); }
+        .keksta .container .right .filters .preset_grungy {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-grungy.png"); }
+        .keksta .container .right .filters .preset_jarques {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-jarques.png"); }
+        .keksta .container .right .filters .preset_pinhole {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-pinhole.png"); }
+        .keksta .container .right .filters .preset_oldBoot {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-oldBoot.png"); }
+        .keksta .container .right .filters .preset_glowingSun {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-glowingSun.png"); }
+        .keksta .container .right .filters .preset_hazyDays {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-hazyDays.png"); }
+        .keksta .container .right .filters .preset_herMajesty {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-herMajesty.png"); }
+        .keksta .container .right .filters .preset_nostalgia {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-nostalgia.png"); }
+        .keksta .container .right .filters .preset_hemingway {
+          background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0.7)), url("../img/toggle-pic-hemingway.png"); }
+        .keksta .container .right .filters .preset-name {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          color: white; }
+        .keksta .container .right .filters .preset.preset_clarity {
+          background-position: 0 0; }
+        .keksta .container .right .filters .preset.preset_concentrate {
+          background-position: -100px 0; }
+        .keksta .container .right .filters .preset.preset_crossProcess {
+          background-position: -200px 0; }
+        .keksta .container .right .filters .preset.preset_glowingSun {
+          background-position: -300px 0; }
+        .keksta .container .right .filters .preset.preset_grungy {
+          background-position: -400px 0; }
+        .keksta .container .right .filters .preset.preset_hazyDays {
+          background-position: -500px 0; }
+        .keksta .container .right .filters .preset.preset_hemingway {
+          background-position: -600px 0; }
+        .keksta .container .right .filters .preset.preset_herMajesty {
+          background-position: -700px 0; }
+        .keksta .container .right .filters .preset.preset_jarques {
+          background-position: -800px 0; }
+        .keksta .container .right .filters .preset.preset_lomo {
+          background-position: -900px 0; }
+        .keksta .container .right .filters .preset.preset_love {
+          background-position: -1000px 0; }
+        .keksta .container .right .filters .preset.preset_nostalgia {
+          background-position: -1100px 0; }
+        .keksta .container .right .filters .preset.preset_oldBoot {
+          background-position: -1200px 0; }
+        .keksta .container .right .filters .preset.preset_orangePeel {
+          background-position: -1300px 0; }
+        .keksta .container .right .filters .preset.preset_original {
+          background-position: -1400px 0; }
+        .keksta .container .right .filters .preset.preset_pinhole {
+          background-position: -1500px 0; }
+        .keksta .container .right .filters .preset.preset_sinCity {
+          background-position: -1600px 0; }
+        .keksta .container .right .filters .preset.preset_sunrise {
+          background-position: -1700px 0; }
+        .keksta .container .right .filters .preset.preset_vintage {
+          background-position: -1800px 0; }
 
 /*# sourceMappingURL=filter.css.map */
