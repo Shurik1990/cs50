@@ -28,13 +28,8 @@
             </div>
             <div class="middle">
                 <div id="share">
-                <div class="like">Share</div>
-                <div class="social" data-url="" data-title={{ config('app.name', 'Photofilters') }}>
-                    <a class="push facebook" data-id="fb"><i class="fa fa-facebook"></i> Facebook</a>
-                    <a class="push twitter" data-id="tw"><i class="fa fa-twitter"></i> Twitter</a>
-                    <a class="push vkontakte" data-id="vk"><i class="fa fa-vk"></i> VK</a>
-                    <a class="push google" data-id="gp"><i class="fa fa-google-plus"></i> Google+</a>
-                </div>
+                <div class="like">Share with friends:</div>
+					<div class="ya-share2" data-services="vkontakte,twitter,facebook,gplus" data-counter data-lang="en" data-size="m"></div>
                 </div>
 				<form action="{{ route('logout') }}" role="form" method="post">
 					<fieldset>
@@ -107,6 +102,7 @@
                 </div>
             </div>
         </div>
+		<script src="https://yastatic.net/share2/share.js" async="async"></script>
 		<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
         <script type="text/javascript" src="js/caman.full.min.js"></script>
         <script type="text/javascript" src="js/filter.js"></script>
