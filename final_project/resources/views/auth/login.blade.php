@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('login') }}" role="form" method="post">
+<form action="{{ route('login') }}" method="post">
     <fieldset>
 	{{ csrf_field() }}
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
