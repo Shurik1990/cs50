@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Storage;
 class PhotoController extends BaseController {
 2
 3	/**
-4	 * Ћтобразить профиль соответствующего пользователя.
+4	 * Отобразить профиль соответствующего пользователя.
 5	 */
 6	public function showPhoto($id)
 7	{

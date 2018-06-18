@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Photofilters - web application for change your photos!" />
+		<meta name="description" content="Photofilters - web application for change your photos!">
+		<meta name="keywords" content="Photofilters, photo, filters, filters for photo">
         <title>{{ config('app.name', 'Photofilters') }}</title>
 		<link href="{{ asset('css/filter.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -30,7 +31,7 @@
             <div class="middle">
                 <div id="share">
                 <div class="like">Share with friends:</div>
-					<div class="ya-share2" data-services="vkontakte,twitter,facebook,gplus" data-counter data-lang="en" data-size="m"></div>
+					<div class="ya-share2" data-url="http://photofilters.hol.es/" data-services="vkontakte,twitter,facebook,gplus" data-lang="en" data-size="m" data-image="http://photofilters.hol.es/img/share_image.png"></div>
                 </div>
 				<form action="{{ route('logout') }}" role="form" method="post">
 					<fieldset>
