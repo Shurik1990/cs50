@@ -6,6 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="Photofilters - web application for change your photos!">
 		<meta name="keywords" content="Photofilters, photo, filters, filters for photo">
+		
+		<!-- For twitter -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Photofilters">
+		<meta name="twitter:description" content="Photofilters - web application for change your photos!">
+		<meta name="twitter:image:src" content="http://photofilters.hol.es/img/share/share_image.png">
+		<meta name="twitter:url" content="http://photofilters.hol.es/img/share/">
+		<meta name="twitter:domain" content="photofilters.hol.es">
+	
+		<!-- For everyone else -->
+		<meta property="og:title" content="Photofilters"/>
+		<meta property="og:description" content="Photofilters - web application for change your photos!" />
+		<meta property="og:type" content="website"/>
+		<meta property="og:url" content="http://photofilters.hol.es/img/share/"/>
+		<meta property="og:image" content="http://photofilters.hol.es/img/share/share_image.png"/>
+		<meta property="og:image:type" content="image/jpg">
+		<meta property="og:image:width" content="1092" /> 
+		<meta property="og:image:height" content="928" />
+		
         <title>{{ config('app.name', 'Photofilters') }}</title>
 		<link href="{{ asset('css/filter.css') }}" rel="stylesheet"/>
 		<link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
@@ -30,8 +49,13 @@
             </div>
             <div class="middle">
                 <div id="share">
-                <div class="like">Share with friends:</div>
-					<div class="ya-share2" data-url="http://photofilters.hol.es/" data-services="vkontakte,twitter,facebook,gplus" data-lang="en" data-size="m" data-image="http://photofilters.hol.es/img/share_image.png"></div>
+					<div class="like">Share with friends:</div>
+					<div class="share_buttons">
+						<input type="button" class="share_btn vk" data-social="vk" data-image="http://photofilters.hol.es/img/share_image.png" data-url="http://photofilters.hol.es/">
+						<input type="button" class="share_btn fb" data-social="fb" data-image="http://photofilters.hol.es/img/share_image.png" data-url="http://photofilters.hol.es/">
+						<input type="button" class="share_btn tw" data-social="tw" data-image="http://photofilters.hol.es/img/share_image.png" data-url="http://photofilters.hol.es/">
+						<input type="button" class="share_btn gp" data-social="gp" data-image="http://photofilters.hol.es/img/share_image.png" data-url="http://photofilters.hol.es/">
+					</div>
                 </div>
 				<form action="{{ route('logout') }}" role="form" method="post">
 					<fieldset>
@@ -104,8 +128,7 @@
                 </div>
             </div>
         </div>
-		<script src="https://yastatic.net/share2/share.js" async="async"></script>
-		<script type="text/javascript" src="js/jquery-3.2.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/caman.full.min.js"></script>
         <script type="text/javascript" src="js/filter.js"></script>
         <script type="text/javascript" src="js/share.js"></script>  
