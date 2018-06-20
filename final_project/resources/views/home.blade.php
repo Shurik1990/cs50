@@ -7,23 +7,23 @@
 		<meta name="description" content="Photofilters - web application for change your photos!">
 		<meta name="keywords" content="Photofilters, photo, filters, filters for photo">
 		
+		<!-- For everyone else -->
+		<meta property="og:title" content="Photofilters" />
+		<meta property="og:description" content="Photofilters - web application for change your photos!" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://photofilters.hol.es/" />
+		<meta property="og:image" content="http://photofilters.hol.es/img/share_image.png" />
+		<meta property="og:image:type" content="image/png">
+		<meta property="og:image:width" content="1092" /> 
+		<meta property="og:image:height" content="928" />
+		
 		<!-- For twitter -->
 		<meta name="twitter:card" content="summary_large_image">
 		<meta name="twitter:title" content="Photofilters">
 		<meta name="twitter:description" content="Photofilters - web application for change your photos!">
-		<meta name="twitter:image:src" content="http://photofilters.hol.es/img/share/share_image.png">
-		<meta name="twitter:url" content="http://photofilters.hol.es/img/share/">
+		<meta name="twitter:image:src" content="http://photofilters.hol.es/img/share_image.png">
+		<meta name="twitter:url" content="http://photofilters.hol.es/">
 		<meta name="twitter:domain" content="photofilters.hol.es">
-	
-		<!-- For everyone else -->
-		<meta property="og:title" content="Photofilters"/>
-		<meta property="og:description" content="Photofilters - web application for change your photos!" />
-		<meta property="og:type" content="website"/>
-		<meta property="og:url" content="http://photofilters.hol.es/img/share/"/>
-		<meta property="og:image" content="http://photofilters.hol.es/img/share/share_image.png"/>
-		<meta property="og:image:type" content="image/jpg">
-		<meta property="og:image:width" content="1092" /> 
-		<meta property="og:image:height" content="928" />
 		
         <title>{{ config('app.name', 'Photofilters') }}</title>
 		<link href="{{ asset('css/filter.css') }}" rel="stylesheet"/>

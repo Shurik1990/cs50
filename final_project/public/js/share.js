@@ -30,9 +30,6 @@ function share(social, url_share){
 		case "fb":
 			url_soc = "https://www.facebook.com/sharer/sharer.php?u="+url_share;
 			break;
-		case "ok":
-			url_soc = "https://connect.ok.ru/offer?url="+url_share;
-			break;
 		case "tw":
 			url_soc = "https://twitter.com/intent/tweet?url="+url_share;
 			break;
@@ -44,7 +41,7 @@ function share(social, url_share){
 	// открытие нового окна для шаринга
 	if(url_soc){
 		// размеры окна
-		var width = 800, height = 500;
+		var width = 900, height = 600;
 		// центруем окно
 		var left = (window.screen.width - width) / 2;
 		var top = (window.screen.height - height) / 2;
