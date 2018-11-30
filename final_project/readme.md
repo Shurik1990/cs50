@@ -3,4 +3,4 @@ Photofilters is a web application created on Laravel (5.4). The application allo
 In addition, the user can download the processed image, share a link to a web page on social networks, and also exit from his account.
 
 
-Link on project: http://photofilters.hol.es
+Link on project: https://photo-fil-ters.000webhostapp.com/
